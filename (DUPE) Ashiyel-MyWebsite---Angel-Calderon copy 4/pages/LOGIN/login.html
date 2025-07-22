@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login</title>
+  <link rel="stylesheet" href="/assets/css/style.css" />
+  <link rel="stylesheet" href="/assets/css/settings.css" />
+</head>
+<body>
+
+<div class="pageWrapper">
+
+
+<!-- HEADER -->
+<header>
+  <h1 class="logo">Welcome to My Website</h1>
+  <nav class="fontNav">
+    <button onclick="window.location.href='/index.html'"><p>Home</p></button>
+    <button onclick="window.location.href='/pages/ABOUT/about.html'"><p>About</p></button>
+    <button onclick="window.location.href='/pages/CONTACTS/contacts.html'"><p>Contacts</p></button>
+  </nav>
+
+  <div class="search-container">
+    <input type="text" id="search" placeholder="Search...">
+  </div>
+
+  <div class="dropdown">
+    <button class="dropbtn">☰</button>
+    <div class="dropdown-content">
+      <a href="/pages/SETTINGS/settings.html">Settings</a>
+    </div>
+  </div>
+</header>
+
+
+<!-- LOGIN FORM -->
+        <div class="settings-header">
+          <h1>LOGIN</h1>
+        </div>
+
+        <div class="settings-box">
+          <form onsubmit="loginUser(event)">
+            <p class="label">Username or Email</p>
+            <input type="text" id="username" class="input-field" placeholder="Enter username or email" required>
+
+            <p class="label">Password</p>
+            <input type="password" id="password" class="input-field" placeholder="Enter password" required>
+        
+            <button class="save-btn" type="submit">Log In</button>
+
+    <!-- Create Account Button -->
+            <button class="create-btn" type="button" onclick="window.location.href='/pages/REGISTER/register.html'">
+              Create a New Account
+            </button>
+          </form>
+        </div>
+
+<!-- FOOTER -->
+        <footer>
+          <div class="footerGen footerAbout">
+            <h4 class="note">You can contact me via:</h4>
+            <p>SMS: 09950258675 - Globe Tel | E-Mail: 202311899@fit.edu.ph | acee.calderon@gmail.com | Facebook: Angel Calderon | Instagram: @ELISFOREL</p>
+         </div>
+        </footer>
+
+<!-- LOGOUT POPUP -->
+        <div id="logoutPopup" class="popup-overlay">
+          <div class="popup-box">
+            <p id="popupMessage">Are you sure you want to logout?</p>
+            <div class="popup-buttons" id="popupButtons">
+              <button onclick="logoutYes()">Yes</button>
+              <button onclick="showStayPrompt()">No</button>
+            </div>
+          </div>
+        </div>
+
+
+<!-- JAVASCRIPT -->
+        <script src="/assets/js/login.js"></script>
+
+</body>
+</html>

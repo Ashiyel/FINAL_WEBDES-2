@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>My Personal Website</title>
+   <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body class="bodyHome">
+  <div class="pageWrapper">
+
+
+
+<!-- HEADER -->
+<header>
+  <h1 class="logo">Welcome to My Website</h1>
+  <nav class="fontNav">
+    <button onclick="window.location.href='/index.html'"><p>Home</p></button>
+    <button onclick="window.location.href='/pages/ABOUT/about.html'"><p>About</p></button>
+    <button onclick="window.location.href='/pages/CONTACTS/contacts.html'"><p>Contacts</p></button>
+  </nav>
+
+  <div class="search-container">
+    <input type="text" id="search" placeholder="Search...">
+  </div>
+
+  <div class="dropdown">
+    <button class="dropbtn">☰</button>
+    <div class="dropdown-content">
+      <a href="/pages/SETTINGS/settings.html">Settings</a>
+    </div>
+  </div>
+</header>
+
+
+<!-- SURVEY POPUP -->
+<div id="surveyPopup" style="display: none; position: fixed; top: 0; left: 0; 
+  width: 100%; height: 100%; background-color: rgba(0,0,0,0.6); justify-content: center; align-items: center; z-index: 1000;">
+  <div style="background: white; padding: 20px; border-radius: 10px; text-align: center; max-width: 300px;">
+    
+    <p id="surveyMessage" class="surveyMessage">Please answer my survey</p>
+    
+    <div id="recommendContainer" style="display: none; margin-bottom: 10px;">
+      <label for="recommendBox">What would you like to recommend?</label><br />
+      <input type="text" id="recommendBox" style="width: 100%; padding: 5px; margin-top: 5px;" />
+    </div>
+    
+    <div id="surveyButtons">
+      <button onclick="surveyYes()">Yes</button>
+      <button onclick="surveyNo()">No</button>
+    </div>
+
+  </div>
+</div>
+
+
+
+
+    <main>
+      <div class="section1">
+        <div class="content clearfix">
+          <div class="introSubhead">
+            <h1>ANGEL CALDERON</h1> 
+            <p>I'm an IT student with a creative heart. Whether I'm coding, sketching, capturing moments through photography, or jamming out on my instruments, I’m always looking for new ways to express myself. I enjoy playing video games, creating both digital and traditional illustrations, and exploring all kinds of art. One day, I hope to turn this passion into a full-time career as an artist. Thanks for stopping by—this is where tech and creativity come together.</p>
+          </div>
+          <div class="image">
+            <img src="./assets/img/grad_pic.jpeg" alt="Angel Calderon - Senior High School Graduation Picture.">
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <div class="footerGen footerHome"> 
+        <h4 class="note">You can contact me via:</h4>
+        <p>SMS: 09950258675 - Globe Tel | E-Mail: 202311899@fit.edu.ph | acee.calderon@gmail.com | Facebook: Angel Calderon | Instagram: @ELISFOREL</p>
+      </div>
+    </footer>
+
+  </div> 
+  
+<!-- LOGOUT POPUP -->
+<div id="logoutPopup" class="popup-overlay">
+  <div class="popup-box">
+    <p id="popupMessage">Are you sure you want to logout?</p>
+    <div class="popup-buttons" id="popupButtons">
+      <button onclick="logoutYes()">Yes</button>
+      <button onclick="showStayPrompt()">No</button>
+    </div>
+  </div>
+</div>
+
+
+<!-- JAVASCRIPT -->
+<script src="/assets/js/login.js"></script>
+
+</body>
+</html>

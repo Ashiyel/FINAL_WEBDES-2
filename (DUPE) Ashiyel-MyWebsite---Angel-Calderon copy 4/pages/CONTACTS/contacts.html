@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Personal Website</title>
+  <link rel="stylesheet" href="/assets/css/style.css" />
+</head>
+<body>
+  <div class="pageWrapper">
+
+
+
+<!-- HEADER -->
+<header>
+  <h1 class="logo">Welcome to My Website</h1>
+  <nav class="fontNav">
+    <button onclick="window.location.href='/index.html'"><p>Home</p></button>
+    <button onclick="window.location.href='/pages/ABOUT/about.html'"><p>About</p></button>
+    <button onclick="window.location.href='/pages/CONTACTS/contacts.html'"><p>Contacts</p></button>
+  </nav>
+
+  <div class="search-container">
+    <input type="text" id="search" placeholder="Search...">
+  </div>
+
+  <div class="dropdown">
+    <button class="dropbtn">☰</button>
+    <div class="dropdown-content">
+      <a href="/pages/SETTINGS/settings.html">Settings</a>
+    </div>
+  </div>
+</header>
+
+
+
+
+
+    <!-- CONTACT SECTION -->
+    <section class="AboutMe">
+      <section class="contactLayout">
+        <h2 class="contactHeader">Contacts</h2>
+        <div class="contactGrid">
+          <div class="contactItem">
+            <img src="/assets/img/google-plus.png" alt="Google Icon" class="icon">
+            <div class="contactText">
+              <p>202311899@fit.edu.ph</p>
+              <p>acee.calderon@gmail.com</p>
+            </div>
+          </div>
+
+          <div class="contactItem">
+            <img src="/assets/img/facebook.png" alt="Facebook Icon" class="icon">
+            <div class="contactText">
+              <p><a href="https://web.facebook.com/angel.calderon15/" target="_blank">Angel Calderon</a></p>
+            </div>
+          </div>
+
+          <div class="contactItem">
+            <img src="/assets/img/instagram.png" alt="Instagram Icon" class="icon">
+            <div class="contactText">
+              <p><a href="https://www.instagram.com/elisforel/profilecard/?igsh=bzlxenh1anNmMmI2" target="_blank">@elisforel</a></p>
+            </div>
+          </div>
+
+          <div class="contactItem">
+            <img src="/assets/img/whatsapp.png" alt="WhatsApp Icon" class="icon">
+            <div class="contactText">
+              <p>63+ 9950258675</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </section>
+
+<div class="contactFormBox">
+  <h3 class="formTitle">Submit the form to let us contact you!</h3>
+  <form id="contact-form" class="contactForm">
+    <input type="text" name="name" placeholder="Your Name" required />
+    <input type="email" name="email" placeholder="Email (ex. juandelacruz@gmail.com)" required />
+    <textarea name="message" placeholder="Your message or feedback..." rows="4" required></textarea>
+    <button type="submit">Submit</button>
+    <p class="success" id="response"></p>
+  </form>
+</div>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="footerGen footerAbout"> 
+        <h4 class="note">You can contact me via:</h4>
+        <p>SMS: 09950258675 - Globe Tel | E-Mail: 202311899@fit.edu.ph | acee.calderon@gmail.com | Facebook: Angel Calderon | Instagram: @ELISFOREL</p>
+      </div>
+    </footer>
+  </div>
+
+
+
+
+
+  <!-- LOGOUT POPUP -->
+  <div id="logoutPopup" class="popup-overlay">
+    <div class="popup-box">
+      <p id="popupMessage">Are you sure you want to logout?</p>
+      <div class="popup-buttons" id="popupButtons">
+        <button onclick="logoutYes()">Yes</button>
+        <button onclick="showStayPrompt()">No</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- JS FILE -->
+  <script src="/assets/js/login.js"></script>
+</body>
+</html>

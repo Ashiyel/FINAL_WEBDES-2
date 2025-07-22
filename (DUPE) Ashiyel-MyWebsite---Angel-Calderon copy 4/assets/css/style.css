@@ -1,0 +1,941 @@
+/* ========== GLOBAL STYLES ========== */
+body {
+  background: linear-gradient(300deg, #ad0000, #000000);
+  background-size: 40% 40%;
+  animation: moveBg 10s ease infinite;
+
+  color: white;
+  font-family: Arial, sans-serif;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.pageWrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+}
+
+
+/* Animation keyframes */
+@keyframes moveBg {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Reset default padding and margin */
+* {
+  padding: 0;
+  margin: 0;
+}
+
+   /* ========== HEADER ========== */
+header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  font-size: medium;
+  margin-bottom: 0;
+  background-color: #474747;
+}
+.dropbtn {
+  background-color: #ffffff00;
+  color: white;
+  padding: 16px;
+  font-size: 30px;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .dropbtn {
+  background-color: #8e3e3e;
+}
+
+/* Logo styling */
+.logo {
+  color: red;
+  font-size: xx-large;
+  letter-spacing: 1px;
+  margin: 0 4%;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+/* Navigation bar styling */
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin: 10px 0;
+}
+
+
+nav button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px 20px;
+}
+
+/*
+nav button:hover {
+  background-color: rgba(255, 255, 255, 0.254);
+  padding-left: 10px;
+  padding-right: 10px;
+}
+*/
+nav button:hover p {
+  color: red;
+  text-shadow: -1px 1px 1px rgba(255, 255, 255, 0.317);
+  text-decoration: none;
+}
+
+
+.fontNav p {
+  color: white;
+  margin: 0;
+  font-size: 16px;
+}
+
+/* SEARCH NAV */
+.search-container {
+  display: flex;
+  justify-content:flex-end;
+  align-items: center;
+  padding: 10px;
+  width: 100%;
+  max-width: 800px;
+  margin: auto;
+  box-sizing: border-box;
+}
+
+.search-container input[type="text"] {
+  width: 100%;
+  padding: 10px 15px;
+  font-size: 16px;
+  border: 2px solid #ccc;
+  outline: none;
+  color: #333;
+  background-color: #fff7e63c;
+}
+
+.search-container input[type="text"]::placeholder {
+  color: #999;
+}
+
+.search-container button {
+  padding: 10px 15px;
+  background-color: #333;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+/* ======== RESPONSIVE FIX FOR SMALL SCREENS ======== */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  nav {
+    justify-content: center;
+    width: 100%;
+  }
+
+  .search-container {
+    width: 90%;
+    padding: 10px 0;
+  }
+}
+
+
+
+/* Header buttons */
+
+/* Survey Popup Overlay */
+#surveyPopup {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.6);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Inner Survey Box */
+.survey-box {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  max-width: 300px;
+  width: 90%;
+  margin: auto;
+}
+
+/* Survey Text */
+.surveyMessage {
+  color: #000;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* Recommend Input Container */
+#recommendContainer {
+  display: none;
+  margin-bottom: 10px;
+}
+
+#recommendBox {
+  width: 100%;
+  padding: 5px;
+  margin-top: 5px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Button Styling */
+button {
+  margin: 5px;
+  padding: 8px 16px;
+  border: none;
+  background-color: #b90000;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #00000037;
+  color: #f90000;
+}
+
+
+header button {
+  padding: 0.5rem 0.1rem;
+  margin-left:15px;
+  margin-right: 15px;
+  font-size: medium;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  border-radius: 2px;
+  background-color: transparent;
+  text-decoration: underline;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+button {
+  margin: 5px;
+  padding: 8px 16px;
+  border: none;
+  background-color: #b90000;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #00000037;
+  color: #f90000;
+}
+
+.surveyMessage {
+  color: #000;
+}
+
+
+/* ========== INTRO SECTION ========== */
+.name {
+  display: flex;
+  align-items: center;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-size: xx-large;
+}
+
+main {
+  color: aliceblue;
+  line-height: 30px;
+  font-size: larger;
+}
+
+/* Subheading styles */
+.introSubhead {
+  color:white;
+  font-family: "Lucida Console", "Courier New", monospace;
+  font-weight: none;
+  font-size: 2vw;
+  line-height: 300%;
+  margin-left: 10cap;
+}
+
+.introSubhead h1 {
+  background-color: #00aaff00;
+  letter-spacing: 10px;
+  font-family: "Lucida Console", "Courier New", monospace;
+  font-weight: lighter;
+
+  color: white;
+  font-size: 100px;
+  margin-left: cap;
+}
+
+.introSubhead p {
+  font-size: 15px;             
+  letter-spacing: 0.5px;       
+  line-height: 2;            
+  color: #ccc;               
+  margin: none;           
+  max-width: 800px;       
+  padding: 0px;
+}
+
+
+/* ========== LAYOUT ========== */
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.content {
+  display: flex;
+  align-items: center;
+}
+
+.image {
+  margin: 100px;
+}
+
+
+.image img {
+
+  width: 400px;
+  max-width: 400px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 20px 20px 20px rgb(198, 0, 0);
+  
+}
+
+
+/* ========== SECTION BACKGROUNDS ========== */
+.section1 {
+  width: 100%;
+  min-height: 85vh;
+  position: relative;
+  background-size: cover;
+  background-color: #000000;
+}
+
+.section2 {
+  position: relative;
+  width: 100%;
+  background-size: cover;
+}
+
+/* ========== TABS ========== */
+.mytabs {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1500px;
+  margin: auto;
+  padding: 25px;
+  margin-bottom: 50px;
+}
+
+
+/* Hide radio buttons */
+.mytabs input[type="radio"] {
+  display: none;
+}
+
+/* Tab labels */
+.mytabs label {
+  color: hsla(0, 24%, 51%, 0.306);
+  cursor: pointer;
+  padding: 15px;
+  background: #49484c;
+  font-weight: bold;
+  border-radius: 10cap;
+  margin: 0 0 10px 10px;
+  text-shadow:
+    -1px -1px 0 #451d8600,
+    1px -1px 0 hsla(56, 89%, 32%, 0),
+    -1px 1px 0 #ffffffe9,
+    1px 1px 0 #000000;
+}
+
+
+/* Tab content */
+.mytabs .tab {
+  width: 100%;
+  padding: 20px;
+  order: 1;
+  display: none;
+  border-radius: 1cap;
+  background: hsla(0, 86%, 36%, 0.4);
+  margin-bottom: 0;       /* ✅ Remove extra space below */
+  min-height: auto;       /* ✅ Ensure it only takes needed space */
+  box-sizing: border-box; /* ✅ Prevent overflow from padding */
+}
+
+/* Tab title */
+.mytabs .tab h2 {
+  font-size: 3em;
+  font-family: flagoriaCalintha;
+  letter-spacing: 10px;
+  color: #ff8400;
+}
+
+/* Show tab when checked */
+.mytabs input[type='radio']:checked + label + .tab {
+  display: block;
+}
+
+/* Highlight selected tab */
+.mytabs input[type="radio"]:checked + label {
+  background: #830000;
+}
+
+/* Tab paragraph content */
+.tab p {
+  color: #ffffff;
+}
+
+
+.footerGen {
+  color: rgb(255, 187, 0);
+  text-align: center;
+  font-size: large;
+  flex-direction: row-reverse;
+  align-items: self-start;
+  margin: 10px 0 20px;
+  line-height: 100%;
+}
+
+
+.note {
+  margin-bottom: auto;
+}
+
+/* ========== TAB CONTENT LINKS ========== */
+.tabContent {
+  color: #f1cecea7;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: xx-large;
+  margin-top: 10px;
+}
+
+/* ========== ABOUT ME SECTION // PAGE 2 ========== */
+.AboutMeTitleHead {
+  background-color: #000000;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  font-size: 100px;
+  font-family: TheBringa;
+  letter-spacing: normal;
+  color: red;
+}
+
+/* ========== CUSTOM FONTS ========== */
+@font-face {
+  font-family: TheBringa;
+  src: url(https://www.dafont.com/the-bringa.font);
+}
+
+@font-face {
+  font-family: flagoriaCalintha;
+  src: url(https://www.dafont.com/flagoriacalintha.font);
+}
+
+/* ========== RESPONSIVE STYLES ========== */
+@media only screen and (max-width: 768px) {
+  .logo {
+    font-size: large;
+    letter-spacing: 5px;
+    margin-left: 2%;
+    margin-right: 10%;
+  }
+
+  nav {
+    width: 80%;
+  }
+
+  header button {
+    font-size: small;
+    margin-left: 5px;
+   
+  }
+
+  .introSubhead {
+    font-size: 5vw;
+    line-height: 150%;
+    margin-left: 5%;
+    margin-top: 100px;
+  }
+
+  .introMain {
+    font-size: 80;
+    line-height: 150%;
+    margin-left: 2%;
+    margin-bottom: 200px;
+  }
+
+  .image {
+    margin-right: 50px;
+  }
+
+  .footerGen {
+    font-size: medium;
+  }
+
+  .AboutMeTitleHead {
+    font-size: 100px;
+    height: 150px;
+  }
+}
+
+
+.tab a.tabContent {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 50px;       
+  color: white;
+  text-decoration: none;
+  display: block;
+  margin: 12px 0;
+  line-height: 1.8;
+}
+
+.tab a.tabContent:hover {
+  text-decoration: underline;
+  color: #ffcc00;
+}
+
+
+.educationTab p {
+  margin-bottom: 0px;
+  line-height: 1.7;
+}
+
+.educationTab h3 {
+  color:#9cdeff;
+}
+
+
+.educationTab a {
+  color: white;
+  text-decoration: none; 
+}
+
+.educationTab a:hover {
+  text-decoration: underline; 
+  color: #ffcc00; 
+}
+
+
+.factsTab ul {
+  line-height: 3;
+  font-size:x-large;
+  margin-top: 20px;
+}
+
+
+/* CONTACTS */
+
+
+.contactLayout {
+  padding: 60px 0px;
+  text-align: center;
+}
+
+.contactHeader {
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size: 40px;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.contactGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  justify-items: center;
+}
+
+.contactItem {
+  display: flex;
+  align-items: center;
+  background-color: #00000033;
+  padding: 20px 25px;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(255, 0, 0, 0.3);
+  width: 100%;
+  max-width: 300px;
+  gap: 20px;
+  text-decoration: none;
+  margin-bottom: 15%;
+  margin-top: 90px;
+
+  
+}
+
+.contactItem .icon {
+  width: 50px;
+  height: 50px;
+  filter: invert(31%) sepia(100%) saturate(7492%) hue-rotate(358deg) brightness(100%) contrast(103%);
+}
+
+.contactText p {
+  margin: 3px 0;
+  text-align: left;
+  font-size: 20px;
+  color: #f2f2f2;
+  text-decoration:none; 
+}
+
+.contactText p a {
+  color: white;              
+  text-decoration: none;      
+}
+
+.contactText p a:hover {
+  color: #ffcc00;             
+  text-decoration: underline;  
+}
+
+
+
+.contactFormBox {
+  background-color: #2d2c2c;
+  padding: 30px;
+  margin: 0px auto 0;
+  text-align: center;
+  border-radius: 12px;
+  max-width: 500px;
+  box-shadow: 0 0 15px rgba(255, 0, 0, 0.858);
+
+  margin-bottom: 100px;
+}
+
+.formTitle {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 25px;
+  color: white;
+}
+
+.contactForm {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contactForm input {
+  padding: 15px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+}
+
+.contactForm button {
+  padding: 12px;
+  background-color: #b03b2d;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.contactForm button:hover {
+  background-color: #8a2f24;
+}
+
+
+textarea {
+  padding: 15px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  resize: vertical;
+  outline: none;
+}
+
+/* Popup styles */
+.confirmation-popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #000000;
+  color: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgb(255, 0, 0);
+  text-align: center;
+  z-index: 1000;
+}
+
+.popup-btn {
+  margin: 10px;
+  padding: 10px 20px;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.popup-btn-yes {
+  background-color: #929292a6;
+  color: white;
+}
+
+.popup-btn-home {
+  background-color: #dc3545;
+  color: white;
+}
+
+
+/* Responsive */
+@media (max-width: 600px) {
+  .contactHeader {
+    font-size: 30px;
+  }
+  .contactItem {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .contactItem .icon {
+    margin-bottom: 10px;
+  }
+}
+
+/* SETTINGS */
+.settings-header {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.settings-header h1 {
+  font-family: 'Impact', sans-serif;
+  font-size: 60px;
+  color: white;
+  letter-spacing: 2px;
+  transform: skewX(-10deg);
+}
+
+.settings-box {
+  background-color: #9200006b;
+  border-radius: 30px;
+  max-width: 700px;
+  margin: 40px auto;
+  padding: 75px;
+  padding-left: 500px;
+  padding-right: 500px;
+  color: white;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.label {
+  font-size: 16px;
+  color: #ddd;
+  margin-bottom: 5px;
+}
+
+.value {
+  font-size: 30px;
+  margin-bottom: 30px;
+}
+
+.checkbox-group {
+  margin-top: 10px;
+  font-size: 18px;
+}
+
+.logout-btn {
+  margin-top: 30px;
+  padding: 12px 25px;
+  font-size: 18px;
+  background-color: #ff4d4d;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  color: rgb(0, 0, 0);
+  transition: background-color 0.3s ease;
+}
+
+.logout-btn:hover {
+  background-color: #4f0000;
+  color: white;
+}
+
+.save-btn {
+  margin-top: 20px;
+  padding: 12px 25px;
+  font-size: 18px;
+  background-color: #727272;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  color: rgb(255, 255, 255);
+  transition: background-color 0.3s ease;
+  margin-right: 15px;
+}
+
+.save-btn:hover {
+  background-color: #000000;
+}
+
+
+/* === POPUP STYLES FOR LOGOUT CONFIRMATION === */
+.popup-overlay {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.7);
+  justify-content: center;
+  align-items: center;
+}
+
+.popup-box {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 12px;
+  text-align: center;
+  max-width: 400px;
+  color: #000;
+  font-size: 18px;
+}
+
+.popup-buttons button {
+  margin: 10px;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  background-color: #333;
+  color: white;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.popup-buttons button:hover {
+  background-color: #555;
+}
+
+/* SAVE POP-UP */
+.top-popup {
+  display: none;
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #ffffff;
+  color: rgb(196, 0, 0);
+  padding: 15px 25px;
+  border-radius: 8px;
+  z-index: 1000;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  font-size: 18px;
+}
+
+.top-popup-box-horizontal {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.top-popup-buttons-horizontal button {
+  background-color: #65131355;
+  color: #000000;
+  border: none;
+  padding: 8px 14px;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.top-popup-buttons-horizontal button:hover {
+  background-color: #e6e6e6;
+}
+
+.popup-message {
+  margin: 0;
+  font-weight: bold;
+}
+
+
+
+
+
+
+
+
+
+

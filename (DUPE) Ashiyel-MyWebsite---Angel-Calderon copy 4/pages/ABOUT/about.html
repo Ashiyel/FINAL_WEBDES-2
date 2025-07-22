@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>My Personal Website</title>
+   <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body class="bodyAbout">
+<div class="pageWrapper">
+
+
+ 
+<!-- HEADER -->
+<header>
+  <h1 class="logo">Welcome to My Website</h1>
+  <nav class="fontNav">
+    <button onclick="window.location.href='/index.html'"><p>Home</p></button>
+    <button onclick="window.location.href='/pages/ABOUT/about.html'"><p>About</p></button>
+    <button onclick="window.location.href='/pages/CONTACTS/contacts.html'"><p>Contacts</p></button>
+  </nav>
+
+  <div class="search-container">
+    <input type="text" id="search" placeholder="Search...">
+  </div>
+
+  <div class="dropdown">
+    <button class="dropbtn">☰</button>
+    <div class="dropdown-content">
+      <a href="/pages/SETTINGS/settings.html">Settings</a>
+    </div>
+  </div>
+</header>
+
+
+
+  <main>
+    <section class="AboutMe">
+      <div class="section2"> 
+        <h1 class="AboutMeTitleHead">About Me</h1>
+        <div class="mytabs">
+
+          <input type="radio" id="tabProjects" name="mytabs" checked="checked">
+          <label for="tabProjects">Projects</label>
+          <div class="tab">
+            <a class="tabContent" href="../PROJECTS/assets/files/AN ANALYSIS OF PREFERRED EDUCATIONAL PLATFORMS AMONGST GAME DESIGN AND DEVELOPMENT MAJOR AT FEU INSITUTE OF TECHNOLOGY, METRO MANILA.pdf" target="_blank" rel="noopener noreferrer">1. Thesis</a>
+
+            <a class="tabContent" href="../PROJECTS/assets/files/Storyboard.pdf" target="_blank" rel="noopener noreferrer">2. Storyboard</a>
+
+            <a class="tabContent" href="../PROJECTS/assets/files/MythosHunt.pdf" target="_blank" rel="noopener noreferrer">3. Mythos Hunt</a>
+
+            <a class="tabContent" href="../PROJECTS/assets/files/Infographic.pdf" target="_blank" rel="noopener noreferrer">4. Infographic</a>
+
+            <a class="tabContent" href="../PROJECTS/assets/files/MovieReview.pdf" target="_blank" rel="noopener noreferrer">5. Film Review</a>
+          </div>
+
+          <input type="radio" id="tabEDUCATION" name="mytabs">
+          <label for="tabEDUCATION">Education</label>
+          <div class="tab educationTab">
+            <h2>Education</h2>
+
+            <h3 class="educSUB">College (Undergraduate)</h3>
+            <p>- Taking Bachelor of Science in Information Technology - Animation and Game Development</p>
+            <p> <a href="https://www.feutech.edu.ph" target="_blank">Far Eastern University - Institute of Technology</a></p>
+            <p> Padre Paredes St, Sampaloc, Manila, 1015 Metro Manila</p>
+
+            <h3 class="educSUB">Senior High School</h3>
+            <p>- Graduated under Strand - Humanities and Social Science</p>
+            <p><a href="https://sct.edu.ph/" target="_blank">Siena College of Taytay</a></p>
+            <p>83 E Rodriguez Ave, Taytay, 1920 Rizal</p>
+
+            <h3 class="educSUB">Junior High School</h3>
+            <p><a href="https://ncba.edu.ph/taytay-campus-enrollment-procedure-for-college/" target="_blank">National College of Business and Arts</a></p>
+            <p> San Juan Ilog Pugad Rizal Ave, Taytay, 1920 Rizal</p>
+
+            <h3 class="educSUB">Primary School</h3>
+            <p><a href="https://web.facebook.com/DepEdTayoROES109541/?_rdc=1&_rdr#" target="_blank">Rosario Ocampo Elementary School</a></p>
+            <p> 348 Rizal Ave, Taytay, 1920 Rizal</p>
+
+            <h3 class="educSUB">Kindergarten</h3>
+            <p> <a href="https://web.facebook.com/sjbps2003/?_rdc=1&_rdr#" target="_blank">St. John the Baptist Parochial School</a></p>
+            <p> J. Sumulong, Taytay, 1920 Rizal</p>
+          </div>
+
+          <input type="radio" id="tabFunFacts" name="mytabs">
+          <label for="tabFunFacts">Skills, Facts, and more</label>
+          <div class="tab factsTab">
+            <h2>Skills, Facts, & More</h2>
+            <ul>
+              <li>I am an artist at heart, deeply immersed in the world of creativity. My forte lies in digital art, though I carry a strong foundation and appreciation for traditional techniques. Every stroke, whether digital or on canvas, is a reflection of my inner world and dedication to the craft. Alongside visual arts, I explore photography as a meaningful hobby—a medium I’m open to embracing professionally in the future. My creative journey is fueled by a deep love for artistic expression, storytelling through writing, and the emotional resonance of music. These elements are not just interests—they are the rhythm of my everyday life, shaping how I see, feel, and connect with the world.
+
+</li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+      <div class="footerGen footerAbout"> 
+        <h4 class="note">You can contact me via:</h4>
+        <p>SMS: 09950258675 - Globe Tel | E-Mail: 202311899@fit.edu.ph | acee.calderon@gmail.com | Facebook: Angel Calderon | Instagram: @ELISFOREL</p>
+      </div>
+    </footer>
+
+</div> 
+
+<!-- LOGOUT POPUP -->
+<div id="logoutPopup" class="popup-overlay">
+  <div class="popup-box">
+    <p id="popupMessage">Are you sure you want to logout?</p>
+    <div class="popup-buttons" id="popupButtons">
+      <button onclick="logoutYes()">Yes</button>
+      <button onclick="showStayPrompt()">No</button>
+    </div>
+  </div>
+</div>
+
+
+<!-- JAVASCRIPT -->
+<script src="/assets/js/login.js"></script>
+
+</body>
+</html>
